@@ -33,7 +33,67 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.conditional.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+            section {
+        margin-bottom: 3rem;
+      }
+      body>header {
+          padding-block: 1rem;
+      }  
+
+      /* --- Mobile Navigation --- */
+      .burger-menu { display: none; }
+
+      @media (max-width: 991px) {
+        .burger-menu {
+          display: block;
+          position: relative;
+          z-index: 1100;
+        }
+
+        #nav-links {
+          display: none;
+          flex-direction: column;
+          position: fixed;
+          inset: 0; /* Shorthand for top, left, width, height */
+          width: 100%;
+          background: var(--pico-background-color) !important; /* Matches your theme automatically */
+          padding-top: 100px;
+          z-index: 1000;
+          margin: 0;
+        }
+
+        #nav-links.open { display: flex; }
+        #nav-links li { list-style: none; text-align: center; padding: 1rem 0; }
+      }
+
+      /* --- Hero Section --- */
+      .hero-section {
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                    url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070') center/cover no-repeat;
+        min-height: 60vh;
+        display: grid; /* Grid is slightly lighter than flex for centering in Pico */
+        place-items: center;
+        text-align: center;
+        color: #fff; /* Ensures white text regardless of theme */
+      }
+
+      /* --- Shadows & Pop --- */
+      .hero-section h1, .hero-section p, 
+      .hero-section button, .hero-section [role="button"] {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      }
+
+      .hero-section button, .hero-section [role="button"] {
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .hero-section button:hover {
+        transform: translateY(-2px);
+      }
+    </style>
     
     <!-- Standard Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
