@@ -44,35 +44,60 @@
       }  
 
       /* --- Mobile Navigation --- */
-      .burger-menu { display: none; }
+      .burger-menu {
+  display: none !important; /* Always hide on desktop */
+}
 
-      @media (max-width: 991px) {
-        .burger-menu {
-          display: block;
-          position: relative;
-          z-index: 1100;
-        }
+      /* Ensure desktop links have space between them */
+nav ul li a:not([role="button"]) {
+  margin-right: 15px; 
+}
 
-        #nav-links {
-          display: none;
-          flex-direction: column;
-          position: fixed;
-          inset: 0; /* Shorthand for top, left, width, height */
-          width: 100%;
-          background: var(--pico-background-color) !important; /* Matches your theme automatically */
-          padding-top: 100px;
-          z-index: 1000;
-          margin: 0;
-        }
+/* --- 3. MOBILE MENU (TRAPPED IN MEDIA QUERY) --- */
+@media (max-width: 991px) {
+  .burger-menu {
+    display: block !important; /* Show only on mobile */
+    position: relative;
+    z-index: 1100;
+  }
 
-        #nav-links.open { display: flex; }
-        #nav-links li { list-style: none; text-align: center; padding: 1rem 0; }
-      }
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #11191f !important;
+    justify-content: flex-start;
+    padding-top: 100px;
+    z-index: 1000;
+    margin: 0;
+  }
 
+  #nav-links.open {
+    display: flex;
+  }
+
+  /* MOBILE-ONLY LINK STYLES */
+  #nav-links li {
+    width: auto;
+    text-align: center;
+  }
+
+  #nav-links li a {
+    font-size: 1.5rem; /* Large and mobile friendly */
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin: 0; /* Remove the desktop right-margin */
+  }
+}
       /* --- Hero Section --- */
       .hero-section {
         background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                    url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070') center/cover no-repeat;
+                    url("hero-image.jpg") center/cover no-repeat;
         min-height: 60vh;
         display: grid; /* Grid is slightly lighter than flex for centering in Pico */
         place-items: center;
@@ -153,8 +178,8 @@
 
 </head>
 <body>
-<header class="pico">
-    <nav class="container">
+<header class="container pico">
+    <nav >
   <ul>
     <li><strong>BrandName</strong></li>
   </ul>
@@ -177,12 +202,13 @@
 </header>  
 <main>
   <section class="hero-section pico" data-theme="dark">
-    <div class="container">
+    <div class="container" style="max-width: 800px;">
 
       <h1>Las Vegas's Most Trusted Air Conditioning Repair Service – Residential & Commercial Solutions</h1>
+      <br>
       <p>Local, licensed technicians delivering honest repairs at prices lower than big-name companies—guaranteed</p>
 
-      <div class="container" style="max-width: 800px;">
+      <div class="container">
       <div class="grid">
         <button>Request a Free Quote</button>
         <button class="contrast outline">Contact Us</button>
@@ -202,8 +228,8 @@
         <img src="img/faucet-repair.jpg" alt="Faucet Repair">
       </header>
       <div class="card-body">
-        <h5>Faucet Repair & Installation</h5>
-        <small>We offer faucet repairs and installations. We can repair existing faucets or install new ones to update your kitchen or bathroom.</small>
+        <h3>Faucet Repair & Installation</h3>
+        <p>We offer faucet repairs and installations. We can repair existing faucets or install new ones to update your kitchen or bathroom.</p>
       </div>
     </article>
 
@@ -212,7 +238,7 @@
         <img src="img/leak-detection.jpg" alt="Leak Detection">
       </header>
       <div class="card-body">
-        <h5>Leak Repairs and Detection</h5>
+        <h3>Leak Repairs and Detection</h3>
         <small>We provide leak repairs and detection services for your plumbing system. We also provide preventative maintenance services.</small>
       </div>
     </article>
@@ -222,7 +248,7 @@
         <img src="img/water-heater.jpg" alt="Water Heater">
       </header>
       <div class="card-body">
-        <h5>Water Heater Installations</h5>
+        <h3>Water Heater Installations</h3>
         <small>We offer regular maintenance services to extend the life of your water heater. We install, repair, and replace faulty units.</small>
       </div>
     </article>
@@ -267,6 +293,117 @@
   </footer>
 </section>
 
+<section class="container pico">
+    <div class="grid">
+      <div>
+          <h2>Welcome To Best in The West Air Conditioning</h2>
+          <p>We provide expert residential and commercial HVAC repairs and installations as Las Vegas's premier air conditioning repair service and heating contractor. Don’t overpay with the big-name companies—our prices are the best in town, guaranteed!</p>
+
+        <ul class="checkmark-list">
+          <li>Licensed & certified technicians</li>
+          <li>100% satisfaction guaranteed</li>
+          <li>Upfront, honest pricing</li>
+          <li>Years of trusted experience</li>
+        </ul>
+
+        <p>
+          <a href="#" class="read-more">Read more about us →</a>
+        </p>
+      </div>
+
+      <div >
+        <img src="img/ivan-hvac-technician.jpg" alt="Technician">
+
+      </div>
+    </div>
+  </section>
+
+<section class="container pico" id="service-area">
+
+    <div class="grid">
+      
+      <div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488520.9860677823!2d-115.14968855!3d36.166129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8e97b6fca8445%3A0x9cbf4aceb81d5999!2sBest%20In%20The%20West%20Air%20Conditioning!5e1!3m2!1sen!2sus!4v1766178276609!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div>
+
+          <h2>Our Service Area</h2>
+          <p>Expert HVAC service brought right to your doorstep. We proudly serve the entire Las Vegas valley.</p>
+
+        
+        <p>Whether you need an emergency AC repair or a full system installation, our technicians are local and ready to help in:</p>
+        
+        <div class="grid">
+          <ul>
+            <li><strong>Las Vegas</strong></li>
+            <li><strong>North Las Vegas</strong></li>
+            <li><strong>Henderson</strong></li>
+          </ul>
+          <ul>
+            <li><strong>Summerlin</strong></li>
+            <li><strong>Boulder City</strong></li>
+            <li><strong>Enterprise</strong></li>
+          </ul>
+        </div>
+
+        <p>
+          <small>Don't see your area? Give us a call at <a href="tel:+17025550123">(702) 555-0123</a> to see if we can make it to you!</small>
+        </p>
+      </div>
+
+    </div>
+
+</section>
 </main>
+<footer style="padding: 0; margin-bottom: 3rem;">
+
+  <div class="container pico">
+    <div class="grid">
+      
+      <div class="logo-col">
+        <img src="img/best-in-the-west-logo.png" alt="Best In The West Logo">
+        <p><small>© 2024 Best In The West<br>Air Conditioning</small></p>
+      </div>
+
+      <div>
+        <strong>Contact Us</strong>
+        <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 10px;">
+          <a href="tel:7026828439">(702) 682-8439</a>
+          <a href="#">Schedule Service</a>
+          <span style="margin-top: 0.5rem;"><small><strong>M-Sat:</strong> 8 AM - 8 PM
+          <br>
+          <strong>Sun:</strong> Closed
+          <br>
+          License #0085161</small></span>
+        </div>
+      </div>
+
+      <div>
+        <strong>Company</strong>
+        <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 10px;">
+
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Financing</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+
+      <div>
+        <strong>Socials</strong>
+        <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 10px;">
+          <a href="#" >Instagram</a>
+          <a href="#" >TikTok</a>
+          <a href="#" >Facebook</a>
+          <a href="#" >Yelp</a>
+        </div>
+      </div>
+      </div>
+    </div>
+
+</footer>
 </body>
 </html>
