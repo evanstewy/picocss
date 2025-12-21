@@ -29,7 +29,7 @@
     <link rel="canonical" href="https://davidcandelas.com/">
 
     <!-- Preload the critical background image and set high priority -->
-    <link rel="preload" as="image" href="hero-image.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="hero-image.webp" fetchpriority="high">
     <link rel="preload" href="css/pico.conditional.min.css" as="style">
     
     <link rel="stylesheet" href="css/pico.conditional.min.css">
@@ -97,8 +97,9 @@ nav ul li a:not([role="button"]) {
       /* --- Hero Section --- */
       .hero-section {
         background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                    url("hero-image.webp") center/cover no-repeat;
+                    url('hero-image.webp') center/cover no-repeat;
         object-fit: cover;
+        background-size: cover;
         --lzl-bg-img: "hero-image.webp";
         min-height: 60vh;
         display: grid; /* Grid is slightly lighter than flex for centering in Pico */
