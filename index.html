@@ -1,144 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    
-    <!-- Primary Meta Tags -->
-    <title>David Candelas | Official Website – Mexican-American Alt Rock Artist</title>
-    <meta name="title" content="David Candelas | Official Website – Mexican-American Alt Rock Artist">
-    <meta name="description" content="David Candelas is a Mexican-American alternative rock artist based in Las Vegas, blending rock, indie and Alt Chicano vibes. Visit his official site for music, news and tour updates.">
-    <meta name="keywords" content="David Candelas, alt rock, alternative rock, Mexican-American artist, Las Vegas musician, indie rock, rock music">
-    <meta name="author" content="David Candelas">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://davidcandelas.com/">
-    <meta property="og:title" content="David Candelas – Official Website">
-    <meta property="og:description" content="Mexican-American alternative rock artist based in Las Vegas.">
-    <meta property="og:image" content="https://davidcandelas.com/David Candelas Photo.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://davidcandelas.com/">
-    <meta property="twitter:title" content="David Candelas – Official Website">
-    <meta property="twitter:description" content="Mexican-American alternative rock artist based in Las Vegas.">
-    <meta property="twitter:image" content="https://davidcandelas.com/David Candelas Photo.jpg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://davidcandelas.com/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
 
-    <!-- Preload the critical background image and set high priority -->
-    <link rel="preload" as="image" href="hero-image.webp" fetchpriority="high">
-    <link rel="preload" href="css/pico.conditional.min.css" as="style">
-    
-    <link rel="stylesheet" href="css/pico.conditional.min.css">
+  <!-- Primary Meta Tags -->
+  <title>David Candelas | Official Website – Mexican-American Alt Rock Artist</title>
+  <meta name="title" content="David Candelas | Official Website – Mexican-American Alt Rock Artist">
+  <meta name="description"
+    content="David Candelas is a Mexican-American alternative rock artist based in Las Vegas, blending rock, indie and Alt Chicano vibes. Visit his official site for music, news and tour updates.">
+  <meta name="keywords"
+    content="David Candelas, alt rock, alternative rock, Mexican-American artist, Las Vegas musician, indie rock, rock music">
+  <meta name="author" content="David Candelas">
 
-    <script src="menu.js" defer></script>
-    <style>
-            section {
-        margin-bottom: 3rem;
-      }
-      body>header {
-          padding-block: 1rem;
-      }  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://davidcandelas.com/">
+  <meta property="og:title" content="David Candelas – Official Website">
+  <meta property="og:description" content="Mexican-American alternative rock artist based in Las Vegas.">
+  <meta property="og:image" content="https://davidcandelas.com/David Candelas Photo.jpg">
 
-      /* --- Mobile Navigation --- */
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://davidcandelas.com/">
+  <meta property="twitter:title" content="David Candelas – Official Website">
+  <meta property="twitter:description" content="Mexican-American alternative rock artist based in Las Vegas.">
+  <meta property="twitter:image" content="https://davidcandelas.com/David Candelas Photo.jpg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://davidcandelas.com/">
+
+  <!-- Preload the critical background image and set high priority -->
+  <link rel="preload" as="image" href="hero-image.webp" fetchpriority="high">
+  <link rel="preload" href="css/pico.conditional.min.css" as="style">
+
+  <link rel="stylesheet" href="css/pico.conditional.min.css">
+
+  <script src="menu.js" defer></script>
+  <style>
+    section {
+      margin-bottom: 3rem;
+    }
+
+    body>header {
+      padding-block: 1rem;
+    }
+
+    /* --- Mobile Navigation --- */
+    .burger-menu {
+      display: none !important;
+      /* Always hide on desktop */
+    }
+
+    /* Ensure desktop links have space between them */
+    nav ul li a:not([role="button"]) {
+      margin-right: 15px;
+    }
+
+    /* --- 3. MOBILE MENU (TRAPPED IN MEDIA QUERY) --- */
+    @media (max-width: 991px) {
       .burger-menu {
-  display: none !important; /* Always hide on desktop */
-}
+        display: block !important;
+        /* Show only on mobile */
+        position: relative;
+        z-index: 1100;
+      }
 
-      /* Ensure desktop links have space between them */
-nav ul li a:not([role="button"]) {
-  margin-right: 15px; 
-}
+      #nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #11191f !important;
+        justify-content: flex-start;
+        padding-top: 100px;
+        z-index: 1000;
+        margin: 0;
+      }
 
-/* --- 3. MOBILE MENU (TRAPPED IN MEDIA QUERY) --- */
-@media (max-width: 991px) {
-  .burger-menu {
-    display: block !important; /* Show only on mobile */
-    position: relative;
-    z-index: 1100;
-  }
+      #nav-links.open {
+        display: flex;
+      }
 
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #11191f !important;
-    justify-content: flex-start;
-    padding-top: 100px;
-    z-index: 1000;
-    margin: 0;
-  }
-
-  #nav-links.open {
-    display: flex;
-  }
-
-  /* MOBILE-ONLY LINK STYLES */
-  #nav-links li {
-    width: auto;
-    text-align: center;
-  }
-
-  #nav-links li a {
-    font-size: 1.5rem; /* Large and mobile friendly */
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    margin: 0; /* Remove the desktop right-margin */
-  }
-}
-      /* --- Hero Section --- */
-      .hero-section {
-        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                    url('hero-image.webp') center/cover no-repeat;
-        object-fit: cover;
-        background-size: cover;
-        --lzl-bg-img: "hero-image.webp";
-        min-height: 60vh;
-        display: grid; /* Grid is slightly lighter than flex for centering in Pico */
-        place-items: center;
+      /* MOBILE-ONLY LINK STYLES */
+      #nav-links li {
+        width: auto;
         text-align: center;
-        color: #fff; /* Ensures white text regardless of theme */
       }
 
-      /* --- Shadows & Pop --- */
-      .hero-section h1, .hero-section p, 
-      .hero-section button, .hero-section [role="button"] {
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      #nav-links li a {
+        font-size: 1.5rem;
+        /* Large and mobile friendly */
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        margin: 0;
+        /* Remove the desktop right-margin */
       }
+    }
 
-      .hero-section button, .hero-section [role="button"] {
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        transition: transform 0.2s, box-shadow 0.2s;
-      }
+    /* --- Hero Section --- */
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('hero-image.webp') center/cover no-repeat;
+      object-fit: cover;
+      background-size: cover;
+      --lzl-bg-img: "hero-image.webp";
+      min-height: 60vh;
+      display: grid;
+      /* Grid is slightly lighter than flex for centering in Pico */
+      place-items: center;
+      text-align: center;
+      color: #fff;
+      /* Ensures white text regardless of theme */
+    }
 
-      .hero-section button:hover {
-        transform: translateY(-2px);
-      }
-    </style>
-    
-    <!-- Standard Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    /* --- Shadows & Pop --- */
+    .hero-section h1,
+    .hero-section p,
+    .hero-section button,
+    .hero-section [role="button"] {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-    <!-- PNG Icons -->
-    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+    .hero-section button,
+    .hero-section [role="button"] {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-    <meta name="apple-mobile-web-app-title" content="David Candelas">
+    .hero-section button:hover {
+      transform: translateY(-2px);
+    }
+  </style>
 
-    <!-- Web Manifest -->
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <!-- JSON-LD Schema Markup - Simplified for Homepage -->
-    <script type="application/ld+json">
+  <!-- Standard Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- PNG Icons -->
+  <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <meta name="apple-mobile-web-app-title" content="David Candelas">
+
+  <!-- Web Manifest -->
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- JSON-LD Schema Markup - Simplified for Homepage -->
+  <script type="application/ld+json">
     [
     {
         /* * Entity 1: The Person (The Solo Artist)
@@ -180,233 +194,249 @@ nav ul li a:not([role="button"]) {
     </script>
 
 </head>
+
 <body>
-<header class="container pico">
-    <nav >
-  <ul>
-    <li><strong>BrandName</strong></li>
-  </ul>
-  
-  <ul>
-    <li>
-      <button class="outline contrast burger-menu" onclick="toggleMenu()">
-        ☰
-      </button>
-    </li>
-  </ul>
+  <header class="container pico">
+    <nav>
+      <ul>
+        <li><strong>BrandName</strong></li>
+      </ul>
 
-  <ul id="nav-links">
-    <li><a href="#" onclick="toggleMenu()">Home</a></li>
-    <li><a href="#" onclick="toggleMenu()">Services</a></li>
-    <li><a href="#" onclick="toggleMenu()">About</a></li>
-    <li><a href="#" role="button" onclick="toggleMenu()">Get Proposal</a></li>
-  </ul>
-</nav>
-</header>  
-<main>
-  <section class="hero-section pico" data-theme="dark">
-    <div class="container" style="max-width: 800px;">
+      <ul>
+        <li>
+          <button class="outline contrast burger-menu" style="font-size: 1.5rem;" onclick="toggleMenu()">
+            ☰
+          </button>
+        </li>
+      </ul>
 
-      <h1>Las Vegas's Most Trusted Air Conditioning Repair Service – Residential & Commercial Solutions</h1>
-      <br>
-      <p>Local, licensed technicians delivering honest repairs at prices lower than big-name companies—guaranteed</p>
+      <ul id="nav-links">
+        <li><a href="#" onclick="toggleMenu()">Services</a></li>
+        <li><a href="#" onclick="toggleMenu()">Areas We Serve</a></li>
+        <li><a href="#" onclick="toggleMenu()">About Us</a></li>
+        <li><a href="#" role="button" onclick="toggleMenu()">Get Proposal</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section pico" data-theme="dark">
+      <div class="container" style="max-width: 800px;">
 
-      <div class="container">
+        <h1>Las Vegas's Most Trusted Air Conditioning Repair Service – Residential & Commercial Solutions</h1>
+        <br>
+        <p>Local, licensed technicians delivering honest repairs at prices lower than big-name companies—guaranteed</p>
+
+        <div class="container">
+          <div class="grid">
+            <button>Request a Free Quote</button>
+            <button class="contrast outline">Contact Us</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section class="container pico">
+
+      <h2>Plumbing Repairing Service</h2>
+      <p>If you need any help with your plumbing, give us a call. We offer a variety of plumbing services for your home
+        or business.</p>
+
       <div class="grid">
-        <button>Request a Free Quote</button>
-        <button class="contrast outline">Contact Us</button>
+        <article class="service-card">
+          <header>
+            <img width="609" height="406" src="img/faucet-repair.jpg" alt="Faucet Repair">
+          </header>
+          <div class="card-body">
+            <h3>Faucet Repair & Installation</h3>
+            <p>We offer faucet repairs and installations. We can repair existing faucets or install new ones to update
+              your kitchen or bathroom.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <header>
+            <img width="609" height="406" src="img/leak-detection.jpg" alt="Leak Detection">
+          </header>
+          <div class="card-body">
+            <h3>Leak Repairs and Detection</h3>
+            <small>We provide leak repairs and detection services for your plumbing system. We also provide preventative
+              maintenance services.</small>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <header>
+            <img width="609" height="406" src="img/water-heater.jpg" alt="Water Heater">
+          </header>
+          <div class="card-body">
+            <h3>Water Heater Installations</h3>
+            <small>We offer regular maintenance services to extend the life of your water heater. We install, repair,
+              and replace faulty units.</small>
+          </div>
+        </article>
+
       </div>
+    </section>
+    <!-- Elfsight Google Reviews Section -->
+    <section class="container" data-theme="light">
+      <!-- Elfsight Google Reviews | Best In The West Google Reviews -->
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-03ced006-57e0-49dc-9428-2e4262b7e6d5" data-elfsight-app-lazy></div>
+    </section>
+    <!-- Recent Projects Section -->
+    <section class="recent-works container pico">
+
+      <h2>RECENT WORKS</h2>
+      <p>
+        Action speaks louder than words. Check our successfully completed
+        projects to clear all doubts. We are professional in this work.
+      </p>
+
+
+      <div class="grid works-grid">
+        <article>
+          <img src="images/building-renovation.jpg" alt="Building Renovation" />
+          <h3>Building Renovation</h3>
+        </article>
+
+        <article>
+          <img src="images/office-renovation.jpg" alt="Office Renovation" />
+          <h3>Office Renovation</h3>
+        </article>
+
+        <article>
+          <img src="images/mini-estate.jpg" alt="Mini Estate Plumbing and Sanitation" />
+          <h3>Mini Estate Plumbing and Sanitation</h3>
+        </article>
       </div>
-    </div>
-  </section>
 
-  <section class="container pico">
-
-    <h2>Plumbing Repairing Service</h2>
-    <p>If you need any help with your plumbing, give us a call. We offer a variety of plumbing services for your home or business.</p>
-
-  <div class="grid">
-    <article class="service-card">
-      <header>
-        <img width="609" height="406" src="img/faucet-repair.jpg" alt="Faucet Repair">
-      </header>
-      <div class="card-body">
-        <h3>Faucet Repair & Installation</h3>
-        <p>We offer faucet repairs and installations. We can repair existing faucets or install new ones to update your kitchen or bathroom.</p>
-      </div>
-    </article>
-
-    <article class="service-card">
-      <header>
-        <img width="609" height="406" src="img/leak-detection.jpg" alt="Leak Detection">
-      </header>
-      <div class="card-body">
-        <h3>Leak Repairs and Detection</h3>
-        <small>We provide leak repairs and detection services for your plumbing system. We also provide preventative maintenance services.</small>
-      </div>
-    </article>
-
-    <article class="service-card">
-      <header>
-        <img width="609" height="406" src="img/water-heater.jpg" alt="Water Heater">
-      </header>
-      <div class="card-body">
-        <h3>Water Heater Installations</h3>
-        <small>We offer regular maintenance services to extend the life of your water heater. We install, repair, and replace faulty units.</small>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<section class="container"  data-theme="light"> 
-<!-- Elfsight Google Reviews | Best In The West Google Reviews -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-03ced006-57e0-49dc-9428-2e4262b7e6d5" data-elfsight-app-lazy></div>
-</section>
-
-<section class="recent-works container pico">
-
-    <h2>RECENT WORKS</h2>
-    <p>
-      Action speaks louder than words. Check our successfully completed
-      projects to clear all doubts. We are professional in this work.
-    </p>
-
-
-  <div class="grid works-grid">
-    <article>
-      <img src="images/building-renovation.jpg" alt="Building Renovation" />
-      <h3>Building Renovation</h3>
-    </article>
-
-    <article>
-      <img src="images/office-renovation.jpg" alt="Office Renovation" />
-      <h3>Office Renovation</h3>
-    </article>
-
-    <article>
-      <img src="images/mini-estate.jpg" alt="Mini Estate Plumbing and Sanitation" />
-      <h3>Mini Estate Plumbing and Sanitation</h3>
-    </article>
-  </div>
-
-  <footer class="section-footer">
-    <a href="#" role="button" class="contrast">View all</a>
-  </footer>
-</section>
-
-<section class="container pico">
-    <div class="grid">
-      <div>
+      <footer class="section-footer">
+        <a href="#" role="button" class="contrast">View all</a>
+      </footer>
+    </section>
+    <!-- About Us Section -->
+    <section class="container pico">
+      <div class="grid">
+        <div>
           <h2>Welcome To Best in The West Air Conditioning</h2>
-          <p>We provide expert residential and commercial HVAC repairs and installations as Las Vegas's premier air conditioning repair service and heating contractor. Don’t overpay with the big-name companies—our prices are the best in town, guaranteed!</p>
+          <p>We provide expert residential and commercial HVAC repairs and installations as Las Vegas's premier air
+            conditioning repair service and heating contractor. Don’t overpay with the big-name companies—our prices are
+            the best in town, guaranteed!</p>
 
-        <ul class="checkmark-list">
-          <li>Licensed & certified technicians</li>
-          <li>100% satisfaction guaranteed</li>
-          <li>Upfront, honest pricing</li>
-          <li>Years of trusted experience</li>
-        </ul>
+          <ul class="checkmark-list">
+            <li>Licensed & certified technicians</li>
+            <li>100% satisfaction guaranteed</li>
+            <li>Upfront, honest pricing</li>
+            <li>Years of trusted experience</li>
+          </ul>
 
-        <p>
-          <a href="#" class="read-more">Read more about us →</a>
-        </p>
+          <p>
+            <a href="#" class="read-more">Read more about us →</a>
+          </p>
+        </div>
+
+        <div>
+          <img src="img/ivan-hvac-technician.jpg" alt="Technician">
+
+        </div>
       </div>
+    </section>
+    <!-- Service Area Section -->
+    <section class="container pico" id="service-area">
 
-      <div >
-        <img src="img/ivan-hvac-technician.jpg" alt="Technician">
+      <div class="grid">
 
-      </div>
-    </div>
-  </section>
+        <div>
+          <iframe
+            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488520.9860677823!2d-115.14968855!3d36.166129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8e97b6fca8445%3A0x9cbf4aceb81d5999!2sBest%20In%20The%20West%20Air%20Conditioning!5e1!3m2!1sen!2sus!4v1766178276609!5m2!1sen!2sus"
+            loading="lazy" title="Best In The West Air Conditioning - Las Vegas HVAC Service Area Map" width="100%"
+            height="100%" style="border:0; border-radius: 15px;" allowfullscreen=""
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
 
-<section class="container pico" id="service-area">
-
-    <div class="grid">
-      
-      <div>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488520.9860677823!2d-115.14968855!3d36.166129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8e97b6fca8445%3A0x9cbf4aceb81d5999!2sBest%20In%20The%20West%20Air%20Conditioning!5e1!3m2!1sen!2sus!4v1766178276609!5m2!1sen!2sus" loading="lazy" title="Best In The West Air Conditioning - Las Vegas HVAC Service Area Map" width="100%" height="100%" style="border:0; border-radius: 15px;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-
-      <div>
+        <div>
 
           <h2>Our Service Area</h2>
           <p>Expert HVAC service brought right to your doorstep. We proudly serve the entire Las Vegas valley.</p>
 
-        
-        <p>Whether you need an emergency AC repair or a full system installation, our technicians are local and ready to help in:</p>
-        
-        <div class="grid">
-          <ul>
-            <li><strong>Las Vegas</strong></li>
-            <li><strong>North Las Vegas</strong></li>
-            <li><strong>Henderson</strong></li>
-          </ul>
-          <ul>
-            <li><strong>Summerlin</strong></li>
-            <li><strong>Boulder City</strong></li>
-            <li><strong>Enterprise</strong></li>
-          </ul>
+
+          <p>Whether you need an emergency AC repair or a full system installation, our technicians are local and ready
+            to help in:</p>
+
+          <div class="grid">
+            <ul>
+              <li><strong>Las Vegas</strong></li>
+              <li><strong>North Las Vegas</strong></li>
+              <li><strong>Henderson</strong></li>
+            </ul>
+            <ul>
+              <li><strong>Summerlin</strong></li>
+              <li><strong>Boulder City</strong></li>
+              <li><strong>Enterprise</strong></li>
+            </ul>
+          </div>
+
+          <p>
+            <small>Don't see your area? Give us a call at <a href="tel:+17025550123">(702) 555-0123</a> to see if we can
+              make it to you!</small>
+          </p>
         </div>
 
-        <p>
-          <small>Don't see your area? Give us a call at <a href="tel:+17025550123">(702) 555-0123</a> to see if we can make it to you!</small>
-        </p>
       </div>
 
+    </section>
+  </main>
+  <footer style="padding: 0; margin-bottom: 3rem;">
+
+    <div class="container pico">
+      <div class="grid">
+
+        <div class="logo-col">
+          <img src="img/best-in-the-west-logo.png" alt="Best In The West Logo">
+          <p><small>© 2024 Best In The West<br>Air Conditioning</small></p>
+        </div>
+
+        <div>
+          <strong>Contact Us</strong>
+          <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 10px;">
+            <a href="tel:7026828439">(702) 682-8439</a>
+            <a href="#">Schedule Service</a>
+            <span style="margin-top: 0.5rem;"><small><strong>M-Sat:</strong> 8 AM - 8 PM
+                <br>
+                <strong>Sun:</strong> Closed
+                <br>
+                License #0085161</small></span>
+          </div>
+        </div>
+
+        <div>
+          <strong>Company</strong>
+          <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 10px;">
+
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Financing</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+
+        <div>
+          <strong>Socials</strong>
+          <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 10px;">
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Facebook</a>
+            <a href="#">Yelp</a>
+          </div>
+        </div>
+      </div>
     </div>
 
-</section>
-</main>
-<footer style="padding: 0; margin-bottom: 3rem;">
-
-  <div class="container pico">
-    <div class="grid">
-      
-      <div class="logo-col">
-        <img src="img/best-in-the-west-logo.png" alt="Best In The West Logo">
-        <p><small>© 2024 Best In The West<br>Air Conditioning</small></p>
-      </div>
-
-      <div>
-        <strong>Contact Us</strong>
-        <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 10px;">
-          <a href="tel:7026828439">(702) 682-8439</a>
-          <a href="#">Schedule Service</a>
-          <span style="margin-top: 0.5rem;"><small><strong>M-Sat:</strong> 8 AM - 8 PM
-          <br>
-          <strong>Sun:</strong> Closed
-          <br>
-          License #0085161</small></span>
-        </div>
-      </div>
-
-      <div>
-        <strong>Company</strong>
-        <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 10px;">
-
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Financing</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Cookie Policy</a>
-        </div>
-      </div>
-
-      <div>
-        <strong>Socials</strong>
-        <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 10px;">
-          <a href="#" >Instagram</a>
-          <a href="#" >TikTok</a>
-          <a href="#" >Facebook</a>
-          <a href="#" >Yelp</a>
-        </div>
-      </div>
-      </div>
-    </div>
-
-</footer>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 </body>
+
 </html>
